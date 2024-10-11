@@ -6,10 +6,6 @@ import { getTranslations } from "next-intl/server";
 
 const pageRoutePath = "pages.index";
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
 export default function HomePage({ params: { locale } }: any) {
   const t = useTranslations(pageRoutePath);
 

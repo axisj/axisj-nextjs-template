@@ -1,20 +1,16 @@
 import { PageParams } from "@/app/@types";
-import { SampleList } from "@/components/server/sample/SampleList";
 import { getPageMetaData } from "@/utils/metadata/getPageMetaData";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
-const pageRoutePath = "pages.index";
+const pageRoutePath = "pages.design";
 
-export default function HomePage({ params: {} }: any) {
+export default function Page({ params: {} }: any) {
   const t = useTranslations(pageRoutePath);
-  const locale = useLocale();
 
   return (
     <div>
       <p>{t("title")}</p>
-      {locale}
-
-      <SampleList />
+      <p>디자인 내용</p>
     </div>
   );
 }

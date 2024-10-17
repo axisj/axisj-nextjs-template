@@ -1,20 +1,18 @@
 import { PageParams } from "@/app/@types";
-import { SampleList } from "@/components/server/sample/SampleList";
+import { LogoutBtn } from "@/app/[locale]/mypage/LogoutBtn";
 import { getPageMetaData } from "@/utils/metadata/getPageMetaData";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
-const pageRoutePath = "pages.index";
+const pageRoutePath = "pages.myPage";
 
-export default function HomePage({ params: {} }: any) {
+export default function Page({ params: {} }: any) {
   const t = useTranslations(pageRoutePath);
-  const locale = useLocale();
 
   return (
     <div>
       <p>{t("title")}</p>
-      {locale}
 
-      <SampleList />
+      <LogoutBtn />
     </div>
   );
 }
